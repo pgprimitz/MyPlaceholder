@@ -1,0 +1,89 @@
+######################################################################
+##                                                                  ##
+#                 MyPlaceholder Plugin | nutellim                    #
+#                                                                    #
+#    builtbybit.com/resources/myplaceholder-plugin-nutellim.61102/   #
+#          nute-setups.gitbook.io/docs/plugins/myplaceholder         #
+#                                                                    #
+#              builtbybit.com/creators/nutellim.455402               #
+#                 discord.com/invite/ZermkrzMDg                      #
+#                                                                    #
+#                       Developed By | Risas                         #
+##                                                                  ##
+######################################################################
+# This is an example placeholder file.
+# You can create custom placeholders.
+# You can use the following types: RANDOM, MATH, REQUIREMENT, COLORED_TEXT
+
+placeholders:
+  # Raw Example
+  example:
+    value: "This is an example placeholder."
+  # Raw Example + Input "{0}" -> %mp_example-2_Test% => "This is an example placeholder. Test"
+  example-2:
+    value: "This is an example placeholder. {0}"
+  # Color Type Formats
+  example-colored-legacy:
+    value: "&6This is an example placeholder."
+    type: "COLORED_TEXT"
+  example-colored-hex-legacy:
+    value: "&#00FF00This is an example placeholder."
+    type: "COLORED_TEXT"
+  # Color Type Formats
+  example-colored-mini:
+    value: "<red>This is an example placeholder."
+    type: "COLORED_TEXT"
+  example-colored-hex-mini:
+    value: "<#00FF00>This is an example placeholder."
+    type: "COLORED_TEXT"
+  # Color Type Formats
+  example-colored-console:
+    value: "§aThis is an example placeholder."
+    type: "COLORED_TEXT"
+  example-colored-hex-console:
+    value: "§x§0§0§F§F§0§0This is an example placeholder."
+    type: "COLORED_TEXT"
+  example-colored-hex-console-2: # You can use & or § both works same :)
+    value: "&x&0&0&F&F&0&0This is an example placeholder."
+    type: "COLORED_TEXT"
+  # Text Random, its just rainbow, ideal for announcements & reminders.
+  example-random:
+    values:
+      - "Random example 1"
+      - "Random example 2"
+      - "Random example 3"
+    type: "RANDOM"
+  # JavaScript example, works with any placeholder int, string, boolean, permission, etc...
+  example-requirement:
+    value: "You have enough money."
+    type: "REQUIREMENT"
+    requirements:
+      haveMoney:
+        type: ">="
+        input: "%vault_eco_balance%"
+        output: "100"
+        deny: "Don't have enough money"
+  example-requirement-2:
+    value: "You're nutellim :)"
+    type: "REQUIREMENT"
+    requirements:
+      isNutellim:
+        type: "string equals"
+        input: "%player_name%"
+        output: "nutellim"
+        deny: "You are not nutellim :("
+  example-requirement-3:
+    value: "You're Risas :)"
+    type: "REQUIREMENT"
+    requirements:
+      isRisas:
+        type: "string equals"
+        input: "%player_name%"
+        output: "Risas"
+        deny: "You are not Risas :("
+  # Example math anything calculated will be managed here. Ideal for control economy.
+  example-math:
+    value: "1 + 1"
+    type: "MATH"
+    rounding: HALF_UP
+    precision: 1

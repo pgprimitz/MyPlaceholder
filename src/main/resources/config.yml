@@ -1,0 +1,6 @@
+command-messages:
+  not-found: "&#FF3D00Command %command% not found."
+  no-permission: "&#FF3D00You don't have permission to execute this command."
+  reload: "&#7CFC00has been reloaded successfully."
+  config-set: "&#7CFC00Placeholder &f%placeholder% &#7CFC00has been changed to &f%value%"
+  prefix: "&#BEFFDD&lMyPlaceholder&r &8| "

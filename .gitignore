@@ -1,0 +1,15 @@
+# Ignorar carpetas de configuración de IntelliJ
+.idea/
+*.iml
+
+# Ignorar TODA la carpeta target (incluyendo el jar)
+# Es mejor generarlo siempre de cero
+target/
+/target/
+
+# Ignorar archivos temporales de Maven
+dependency-reduced-pom.xml
+
+# OCULTAR el código Java pero dejar Resources
+# (Aunque lo normal es subir el código, si quieres ocultarlo esta es la ruta)
+src/main/java
