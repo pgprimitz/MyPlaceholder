@@ -1,59 +1,61 @@
+<img width="1920" height="1080" alt="MyPlaceholders_Cover" src="https://github.com/user-attachments/assets/103a854b-97cc-4149-86d0-e07578e58e4d" />
+
 # MyPlaceholder 🌟
 
-**MyPlaceholder** es un plugin potente y versátil para Minecraft que permite a los administradores crear sus propios placeholders personalizados de forma dinámica. ¡Dale vida a tus mensajes, menús y tablas con lógica personalizada y condiciones avanzadas!
+**MyPlaceholder** is a powerful and versatile Minecraft plugin that allows administrators to create their own custom placeholders dynamically. Bring your messages, menus, and scoreboards to life with custom logic and advanced conditions!
 
 ---
 
-## 🔗 Enlaces Oficiales
-* **Perfil del Creador (BuiltByBit):** https://builtbybit.com/creators/nutellim.455402
-* **Wiki Oficial (Documentación):** https://nute-setups.gitbook.io/docs/plugins/myplaceholder
-* **Discord Oficial (Soporte):** https://discord.com/invite/ZermkrzMDg
-* **Repositorio GitHub:** https://github.com/pgprimitz/MyPlaceholder
+## 🔗 Official Links
+* **Creator Profile (BuiltByBit):** https://builtbybit.com/creators/nutellim.455402
+* **Official Wiki (Documentation):** https://nute-setups.gitbook.io/docs/plugins/myplaceholder
+* **Official Discord (Support):** https://discord.com/invite/ZermkrzMDg
+* **GitHub Repository:** https://github.com/pgprimitz/MyPlaceholder
 
 ---
 
-## ✨ Características Principales
-* **Compatibilidad Universal:** Funciona perfectamente desde la **1.16.1 hasta la 1.21.x** gracias a su compilación optimizada en Java 8.
-* **Sistema de Lógica:** Realiza comparaciones matemáticas y de texto en tiempo real.
-* **Formato de Colores:** Soporte completo para colores Legacy (`&6`) y códigos **Hexadecimales** (`&#FF3D00`).
-* **Integración Adventure:** Soporte nativo para **MiniMessage** y componentes de texto modernos para una experiencia visual superior.
-* **Placeholders Dinámicos:** Soporte para argumentos externos usando `{0}`, `{1}`, etc., permitiendo placeholders interactivos.
-* **Condicionales Avanzados:** Muestra diferentes resultados basados en si el jugador cumple o no ciertos requisitos, como balance de economía o permisos.
+## ✨ Main Features
+* **Universal Compatibility:** Works perfectly from **1.16.1 to 1.21.x** thanks to its optimized compilation in Java 8.
+* **Logic System:** Performs mathematical and text comparisons in real-time.
+* **Color Formatting:** Full support for Legacy colors (`&6`) and **Hexadecimal** codes (`&#FF3D00`).
+* **Adventure Integration:** Native support for **MiniMessage** and modern text components for a superior visual experience.
+* **Dynamic Placeholders:** Support for external arguments using `{0}`, `{1}`, etc., allowing for interactive placeholders.
+* **Advanced Conditionals:** Display different results based on whether a player meets specific requirements, such as economy balance or permissions.
 
 ---
 
-## 🛠️ Configuración y Uso
+## 🛠️ Configuration and Usage
 
-### Carpeta de Placeholders
-El plugin carga automáticamente todos los archivos `.yml` dentro de la carpeta `/placeholders/`. Esto te permite organizar tus creaciones por categorías (ej: `rangos.yml`, `stats.yml`).
+### Placeholders Folder
+The plugin automatically loads all `.yml` files located inside the `/placeholders/` folder. This allows you to organize your creations by categories (e.g., `ranks.yml`, `stats.yml`).
 
-### Tipos de Placeholders Disponibles
-Puedes configurar diversos comportamientos según tus necesidades:
+### Available Placeholder Types
+You can configure various behaviors according to your needs:
 
-#### 1. Texto con Colores (`COLORED_TEXT`)
-Ideal para nombres de servidor o etiquetas estéticas con degradados.
+#### 1. Colored Text (`COLORED_TEXT`)
+Ideal for server names or aesthetic labels with gradients.
 ```yaml
-ejemplo-titulo:
-  value: "&#61FF57&lSERVER &8| &7¡Bienvenido!"
+example-title:
+  value: "&#61FF57&lSERVER &8| &7Welcome!"
   type: "COLORED_TEXT"
 ```
 
-#### 2. Mensajes Aleatorios (RANDOM)
-Selecciona una línea al azar de una lista cada vez que el placeholder se refresca, ideal para anuncios.
+#### 2. Random Messages (RANDOM)
+Selects a random line from a list every time the placeholder refreshes—perfect for announcements.
 ```yaml
-mensaje-bienvenida:
+welcome-message:
   values:
-    - "¡Hola de nuevo!"
-    - "¡Esperamos que te diviertas!"
-    - "¡Visita nuestra tienda!"
+    - "Welcome back!"
+    - "We hope you have fun!"
+    - "Remember to visit our store!"
   type: "RANDOM"
 ```
 
-#### 3. Con Requisitos (REQUIREMENT)
-Permite crear lógica condicional comparando un input (usualmente otro placeholder) contra un output.
-Operadores: >=, <=, ==, !=, string equals, string contains.
+#### 3. With Requirements (REQUIREMENT)
+Allows for conditional logic by comparing an input (usually another placeholder) against an output.
+- Operators: >=, <=, ==, !=, string equals, string contains.
 ```yaml
-rango-vip:
+vip-rank:
   value: "&a[VIP]"
   type: "REQUIREMENT"
   requirements:
@@ -61,27 +63,26 @@ rango-vip:
       type: "=="
       input: "%luckperms_has_permission_group.vip%"
       output: "yes"
-      deny: "&7[Usuario]"
+      deny: "&7[User]"
 ```
 
-#### ⌨️ Comandos y Permisos
-Los mensajes de los comandos son totalmente editables desde el config.yml:
+#### Commands and Permissions
+Command messages are fully editable within the config.yml:
 | Comando | Descripción | Permiso |
 | :--- | :--- | :--- |
-| `/mp help` | Muestra el menú de ayuda del plugin. | `myplaceholder.help` |
-| `/mp reload` | Recarga la configuración y los placeholders. | `myplaceholder.reload` |
-| `/mp info` | Muestra información detallada del plugin. | `myplaceholder.info` |
-| `/mp list` | Muestra una lista de todos los placeholders cargados. | `myplaceholder.list` |
+| `/mp help` | Displays the plugin help. | `myplaceholder.help` |
+| `/mp reload` | Reloads the configuration and placeholders. | `myplaceholder.reload` |
+| `/mp config` | Change any placeholder ingame. | `myplaceholder.config` |
 
-#### 🚀 Instalación
-1. Descarga el archivo MyPlaceholder-1.0.0.jar.
-2. Asegúrate de tener instalado PlaceholderAPI en tu servidor.
-3. Sube el plugin a tu carpeta /plugins/.
-4. Reinicia el servidor para generar los archivos de configuración iniciales.
-5. ¡Empieza a crear tus placeholders en la carpeta /placeholders/!
+#### Installation
+1. Download the MyPlaceholder-1.0.0.jar file.
+2. Ensure PlaceholderAPI is installed on your server.
+3. Upload the plugin to your /plugins/ folder.
+4. Restart the server to generate the initial configuration files.
+5. Start creating your placeholders in the /placeholders/ folder!
 
-#### 📂 Archivos de Sistema
- - config.yml: Controla el prefijo del plugin y los mensajes de administración.
- - example.yml: Archivo de ejemplo con comentarios detallados para aprender a usar todas las funciones.
+#### 📂 System Files
+- config.yml: Controls the plugin prefix and administrative messages.
+- example.yml: Example file with detailed comments to help you learn all functions.
 
-Desarrollado con ❤️ por Risas | Distribuido por nutellim
+Developed with ❤️ by Risas | Distributed by nutellim
