@@ -1,5 +1,7 @@
 <img width="1920" height="1080" alt="MyPlaceholders_Cover" src="https://github.com/user-attachments/assets/103a854b-97cc-4149-86d0-e07578e58e4d" />
 
+![Repo Unique Views](https://visitor-badge.laobi.icu/badge?page_id=pgprimitz.MyPlaceholder&right_color=green) ![Minecraft 1.16](https://img.shields.io/badge/minecraft-1.16-blue)
+
 # MyPlaceholder 🌟
 
 **MyPlaceholder** is a powerful and versatile Minecraft plugin that allows administrators to create their own custom placeholders dynamically. Bring your messages, menus, and scoreboards to life with custom logic and advanced conditions!
