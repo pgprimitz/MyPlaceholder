@@ -7,7 +7,7 @@
 ---
 
 ## 🔗 Official Links
-* **Creator Profile (BuiltByBit):** https://builtbybit.com/creators/nutellim.455402
+* **Plugin Download (BuiltByBit):** https://builtbybit.com/resources/myplaceholder-plugin-nutellim.61102/
 * **Official Wiki (Documentation):** https://nute-setups.gitbook.io/docs/plugins/myplaceholder
 * **Official Discord (Support):** https://discord.com/invite/ZermkrzMDg
 * **GitHub Repository:** https://github.com/pgprimitz/MyPlaceholder
@@ -68,7 +68,7 @@ vip-rank:
 
 #### Commands and Permissions
 Command messages are fully editable within the config.yml:
-| Comando | Descripción | Permiso |
+| Commands | Description | Permission |
 | :--- | :--- | :--- |
 | `/mp help` | Displays the plugin help. | `myplaceholder.help` |
 | `/mp reload` | Reloads the configuration and placeholders. | `myplaceholder.reload` |
