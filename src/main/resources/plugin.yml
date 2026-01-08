@@ -1,7 +1,7 @@
 name: MyPlaceholder
 version: '${project.version}'
 main: dev.risas.myplaceholder.MyPlaceholder
-api-version: '1.20'
+api-version: '1.13'
 author: Risas, nutellim
 description: MyPlaceholder
 depend: [PlaceholderAPI]
