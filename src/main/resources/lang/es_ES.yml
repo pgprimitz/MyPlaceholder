@@ -2,7 +2,7 @@
 # ║           MyPlaceholder - Idioma: Español                ║
 # ╚══════════════════════════════════════════════════════════╝
 
-prefix: "&#BEFFDD&lMyPlaceholder&r &8| "
+prefix: "&#BEFFDD&lMyPlaceholders&r &8| "
 
 command-messages:
   not-found: "&#FF3D00Comando &f%command% &#FF3D00no encontrado."

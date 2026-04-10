@@ -63,7 +63,7 @@ The plugin automatically detects your server's language.
 
 ### Steps:
 
-1. **Download** the `MyPlaceholders-X.X.X.jar` file
+1. **Download** the `MyPlaceholders.jar` file
 2. **Upload** it to your server's `/plugins/` folder
 3. **Restart** your server
 4. **Done!** The plugin will create all necessary folders automatically
@@ -76,6 +76,9 @@ The plugin automatically detects your server's language.
 plugins/
 └── MyPlaceholders/
     ├── config.yml          # General messages and settings
+    ├── Langs               # Where all text its managed
+    ├   └── en_ES.yml
+    ├   └── es_EN.yml
     └── placeholders/
         └── example.yml     # Examples to get you started
 ```
@@ -86,7 +89,7 @@ plugins/
 
 All technical documentation, step-by-step guides, and advanced examples are available in our wiki:
 
-👉 **[Official Documentation](https://nute-setups.gitbook.io/docs/plugins/myplaceholder)**
+👉 **[Official Documentation](https://nute-setups.gitbook.io/docs/plugins/myplaceholders)**
 
 ---
 
@@ -97,10 +100,10 @@ All technical documentation, step-by-step guides, and advanced examples are avai
 | 💬 [Discord](https://discord.com/invite/ZermkrzMDg) | Live support and questions |
 | 📖 [Wiki](https://nute-setups.gitbook.io/docs/plugins/myplaceholder) | Complete documentation |
 | 🐛 [GitHub Issues](https://github.com/pgprimitz/MyPlaceholder/issues) | Report bugs or errors |
-| 💎 [BuiltByBit](https://builtbybit.com/resources/myplaceholder-plugin-nutellim.61102/) | Premium version with priority support |
+| 💎 [BuiltByBit](https://builtbybit.com/creators/nutellim.455402/) | Premium version with priority support |
 
 ---
 
 <p align="center">
-  Made with ❤️ by <a href="https://github.com/pgprimitz">pgprimitz</a> • Distributed by <a href="https://discord.com/invite/ZermkrzMDg">nutellim</a>
+  Made with ❤️ by <a href="https://github.com/Imhhitt">hhitt</a> • Distributed by <a href="https://discord.com/invite/ZermkrzMDg">nutellim</a>
 </p>

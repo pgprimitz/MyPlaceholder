@@ -1,4 +1,4 @@
-name: MyPlaceholder
+name: MyPlaceholders
 version: '${project.version}'
 main: dev.nutellim.MyPlaceholders.MyPlaceholder
 api-version: '1.13'
