@@ -3,6 +3,8 @@ package dev.nutellim.MyPlaceholders.utilities;
 import me.clip.placeholderapi.PlaceholderAPI;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
+import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
+import net.kyori.adventure.text.minimessage.tag.standard.StandardTags;
 import net.kyori.adventure.audience.Audience;
 import lombok.experimental.UtilityClass;
 import net.md_5.bungee.api.ChatColor;
@@ -16,7 +18,19 @@ import java.util.regex.Pattern;
 @UtilityClass
 public class ChatUtil {
 
-    private final MiniMessage MINI_MESSAGE = MiniMessage.miniMessage();
+    // Only colors/decorations/gradients are allowed — no <click>, <hover>, <insertion>, etc.
+    // so text resolved from config values / PAPI placeholders can never turn into an
+    // interactive component that runs a command when clicked.
+    private final MiniMessage MINI_MESSAGE = MiniMessage.builder()
+            .tags(TagResolver.resolver(
+                    StandardTags.color(),
+                    StandardTags.decorations(),
+                    StandardTags.gradient(),
+                    StandardTags.rainbow(),
+                    StandardTags.reset(),
+                    StandardTags.transition()
+            ))
+            .build();
     private final Pattern LEGACY_HEX_PATTERN = Pattern.compile("§x(§[A-Fa-f0-9]){6}");
     private final Pattern LEGACY_COLOR_PATTERN = Pattern.compile("(?i)([&§])([0-9A-FK-ORX])");
     private final Pattern HEX_PATTERN = Pattern.compile("&#([0-9a-fA-F]{6})");

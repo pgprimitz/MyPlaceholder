@@ -24,3 +24,6 @@ permissions:
   myplaceholder.command.myplaceholder.parse:
     description: Parse a placeholder for a player
     default: op
+  myplaceholder.command.myplaceholder.folder:
+    description: Enable or disable a placeholder file
+    default: op
