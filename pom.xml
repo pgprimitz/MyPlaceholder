@@ -161,12 +161,12 @@
                     <relocations>
                         <relocation>
                             <pattern>net.kyori</pattern>
-                            <shadedPattern>dev.nutellim.myplaceholder.shade.kyori</shadedPattern>
+                            <shadedPattern>dev.nutellim.MyPlaceholders.shade.kyori</shadedPattern>
                         </relocation>
                         <!-- bStats 21/03/2026 -->
                         <relocation>
                             <pattern>org.bstats</pattern>
-                            <shadedPattern>dev.nutellim.myplaceholder.shade.bstats</shadedPattern>
+                            <shadedPattern>dev.nutellim.MyPlaceholders.shade.bstats</shadedPattern>
                         </relocation>
                     </relocations>
                     <filters>

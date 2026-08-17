@@ -4,7 +4,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Minecraft-1.16%20--%201.21.X-blue" alt="Minecraft">
-  <img src="https://img.shields.io/badge/Version-1.0.3-green" alt="Version">
+  <img src="https://img.shields.io/badge/Version-1.0.4-green" alt="Version">
   <img src="https://img.shields.io/badge/Languages-26-orange" alt="Languages">
 </p>
 
@@ -30,6 +30,7 @@ Imagine a scoreboard where every player sees their rank with custom colors, or a
 | 📊 **Progress Bars** | Visually displays XP, level, or any progress |
 | 🎭 **Conditions** | Shows different text based on player requirements |
 | 🔢 **Math** | Compares values and reacts based on results |
+| ⏳ **Countdown** | Shows the remaining time until a fixed date, in your own format |
 
 ---
 
@@ -93,7 +94,7 @@ All technical documentation, step-by-step guides, and advanced examples are avai
 |---------|-----|
 | 💬 [Discord](https://discord.com/invite/ZermkrzMDg) | Live support and questions |
 | 📖 [Wiki](https://nute-setups.gitbook.io/docs/plugins/myplaceholders) | Complete documentation |
-| 🐛 [GitHub Issues](https://github.com/pgprimitz/MyPlaceholder/issues) | Report bugs or errors |
+| 🐛 [GitHub Issues](https://github.com/pgprimitz/MyPlaceholders/issues) | Report bugs or errors |
 | 💎 [BuiltByBit](https://builtbybit.com/creators/nutellim.455402/) | Premium version with priority support |
 
 ---

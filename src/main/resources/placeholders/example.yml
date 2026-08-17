@@ -5,7 +5,7 @@
 # ║  Use it as a reference when creating your own placeholder files.             ║
 # ║                                                                              ║
 # ║  Supported types: STRING, COLORED_TEXT, RANDOM, MATH, REQUIREMENT,          ║
-# ║                   PROGRESS, ANIMATION                                        ║
+# ║                   PROGRESS, ANIMATION, COUNTDOWN                             ║
 # ║                                                                              ║
 # ║  Built-in converters (no YML needed, use directly as placeholders):          ║
 # ║    %mp_roman_14%           → XIV                                             ║
@@ -457,15 +457,36 @@ placeholders:
 
   # ══════════════════════════════════════════════════════════════════════════════
   #  COUNTDOWN
-  #  Shows the remaining time until a fixed date, formatted with your own template.
-  #  target must use the "yyyy-MM-dd HH:mm:ss" format (server's local timezone).
+  #  Shows the remaining time until a fixed date/time, formatted with your own
+  #  template. Recalculated on every request — no background task needed.
   #
-  #  Usage: %mp_example-countdown-christmas%
+  #  target: fixed date/time, must use "yyyy-MM-dd HH:mm:ss" (server's local timezone)
+  #  format: template using the time tokens below
+  #  expired: text shown once the target date/time has passed
+  #
+  #  Time tokens (all decimal, no zero-padding):
+  #    %days%     → whole days remaining
+  #    %hours%    → hours remaining, 0-23 (already excludes full days)
+  #    %minutes%  → minutes remaining, 0-59 (already excludes full hours)
+  #    %seconds%  → seconds remaining, 0-59 (already excludes full minutes)
+  #
+  #  Usage: %mp_example-countdown-christmas%  →  "5d 3h 12m 47s" (while counting down)
+  #                                            →  "Merry Christmas!" (once it's reached)
+  # ══════════════════════════════════════════════════════════════════════════════
+
   example-countdown-christmas:
     type: COUNTDOWN
     target: "2026-12-25 00:00:00"
     format: "&#7CFC00%days%d &#7CFC00%hours%h &#7CFC00%minutes%m &#7CFC00%seconds%s"
     expired: "&#FF5500Merry Christmas!"
+
+  # Countdown with a shorter template — only days and hours
+  # Usage: %mp_example-countdown-restart%
+  example-countdown-restart:
+    type: COUNTDOWN
+    target: "2026-09-01 04:00:00"
+    format: "&#00AAFFRestart in %days%d %hours%h"
+    expired: "&#FF5500Restarting now..."
 
   # ══════════════════════════════════════════════════════════════════════════════
   #  ANIMATION
