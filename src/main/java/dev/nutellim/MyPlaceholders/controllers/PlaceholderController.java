@@ -16,6 +16,7 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 public class PlaceholderController {
@@ -105,6 +106,7 @@ public class PlaceholderController {
             case MATH:         return new MathPlaceholder(placeholderId, section);
             case REQUIREMENT:  return new RequirementPlaceholder(placeholderId, section);
             case PROGRESS:     return new ProgressPlaceholder(placeholderId, section);
+            case COUNTDOWN:    return new CountdownPlaceholder(placeholderId, section);
             case ANIMATION: {
                 AnimationPlaceholder anim = new AnimationPlaceholder(placeholderId, section);
                 animationTickManager.register(anim);
@@ -150,7 +152,14 @@ public class PlaceholderController {
 
     public File getPlaceholderFile(String categoryId) {
         File root = new File(plugin.getDataFolder(), "placeholders");
-        return new File(root, categoryId + ".yml");
+        File target = new File(root, categoryId + ".yml");
+        try {
+            String rootPath = root.getCanonicalPath() + File.separator;
+            if (!target.getCanonicalPath().startsWith(rootPath)) return null;
+        } catch (IOException e) {
+            return null;
+        }
+        return target;
     }
 
     private boolean isFileEnabled(File file) {

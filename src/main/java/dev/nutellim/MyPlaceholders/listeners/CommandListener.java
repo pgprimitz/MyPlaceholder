@@ -2,9 +2,7 @@ package dev.nutellim.MyPlaceholders.listeners;
 
 import dev.nutellim.MyPlaceholders.utilities.BukkitUtil;
 import me.clip.placeholderapi.PlaceholderAPI;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Cancellable;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -15,30 +13,36 @@ public class CommandListener implements Listener {
 
     @EventHandler(priority = EventPriority.MONITOR)
     public void onServerCommand(ServerCommandEvent event) {
-        executePlaceholderCommand(event.getCommand(), event);
+        String resolved = resolvePlaceholders(event.getCommand());
+        if (resolved != null) event.setCommand(resolved);
     }
 
     @EventHandler(priority = EventPriority.MONITOR)
     public void onPlayerCommand(PlayerCommandPreprocessEvent event) {
-        executePlaceholderCommand(event.getMessage().substring(1), event);
+        String command = event.getMessage().substring(1);
+        if (!containsPlaceholder(command)) return;
+
+        String resolved = PlaceholderAPI.setPlaceholders(event.getPlayer(), command);
+        event.setMessage("/" + resolved);
     }
 
-    private void executePlaceholderCommand(String command, Cancellable event) {
-        if (!command.contains("%myplaceholder_")
-                && !command.contains("%mp_")
-                && !command.contains("%mypl_")) return;
-
-        if (command.startsWith("papi") || command.startsWith("placeholderapi")) return;
-
-        if (command.startsWith("mp ") || command.startsWith("myplaceholder ")
-                || command.startsWith("mypl ")) return;
+    private String resolvePlaceholders(String command) {
+        if (!containsPlaceholder(command)) return null;
 
         Player player = BukkitUtil.getPlayerByArguments(command.split(" "));
-        if (player == null) return;
+        if (player == null) return null;
 
-        event.setCancelled(true);
+        return PlaceholderAPI.setPlaceholders(player, command);
+    }
 
-        command = PlaceholderAPI.setPlaceholders(player, command);
-        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
+    private boolean containsPlaceholder(String command) {
+        if (!command.contains("%myplaceholder_")
+                && !command.contains("%mp_")
+                && !command.contains("%mypl_")) return false;
+
+        if (command.startsWith("papi") || command.startsWith("placeholderapi")) return false;
+
+        return !command.startsWith("mp ") && !command.startsWith("myplaceholder ")
+                && !command.startsWith("mypl ");
     }
 }

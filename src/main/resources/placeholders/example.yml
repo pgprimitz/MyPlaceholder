@@ -456,6 +456,18 @@ placeholders:
 
 
   # ══════════════════════════════════════════════════════════════════════════════
+  #  COUNTDOWN
+  #  Shows the remaining time until a fixed date, formatted with your own template.
+  #  target must use the "yyyy-MM-dd HH:mm:ss" format (server's local timezone).
+  #
+  #  Usage: %mp_example-countdown-christmas%
+  example-countdown-christmas:
+    type: COUNTDOWN
+    target: "2026-12-25 00:00:00"
+    format: "&#7CFC00%days%d &#7CFC00%hours%h &#7CFC00%minutes%m &#7CFC00%seconds%s"
+    expired: "&#FF5500Merry Christmas!"
+
+  # ══════════════════════════════════════════════════════════════════════════════
   #  ANIMATION
   #  Generates animated color effects that update in real time.
   #  Uses a single shared background task for all animations (no lag).

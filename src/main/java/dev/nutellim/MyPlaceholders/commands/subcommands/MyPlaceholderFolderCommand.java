@@ -43,7 +43,7 @@ public class MyPlaceholderFolderCommand extends SubCommand {
         String action = args[2].toLowerCase();
         File file = placeholderController.getPlaceholderFile(categoryId);
 
-        if (!file.exists()) {
+        if (file == null || !file.exists()) {
             ChatUtil.sendMessage(audience, prefix + "&cFile '&f" + categoryId + "&c' not found.");
             return;
         }

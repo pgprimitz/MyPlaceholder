@@ -7,7 +7,8 @@ public enum PlaceholderType {
     MATH,
     REQUIREMENT,
     ANIMATION,
-    PROGRESS;
+    PROGRESS,
+    COUNTDOWN;
 
     public static PlaceholderType find(String type) {
         if (type == null) return STRING;
